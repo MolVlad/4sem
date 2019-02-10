@@ -6,7 +6,7 @@
 bool more(const std::string& lhs, const std::string& rhs)
 {
 	if(lhs.size() != rhs.size())
-		return lhs < rhs;
+		return lhs.size() < rhs.size();
 
 	return lhs < rhs;
 }
