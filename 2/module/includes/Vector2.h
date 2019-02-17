@@ -16,6 +16,10 @@ class Vector2
 
 	float Len() const;
 	float SquareLen() const;
+	Vector2 Perpendicular() const;
+	Vector2 Norm() const;
+	void Rotate(float angle);
+	Vector2 GetRotated(float angle);
 
 	Vector2 operator+(const Vector2& other) const;
 	void operator+=(const Vector2& other);
@@ -23,13 +27,21 @@ class Vector2
 	Vector2 operator-(const Vector2& other) const;
 	void operator-=(const Vector2& other);
 
+	float operator*(const Vector2& other);
+	float operator^(const Vector2& other) const;
+
+	Vector2 operator*(float k) const;
+	Vector2 operator-();
+	Vector2 operator/(float k);
+
 	float x, y;
 
 	private:
 };
 
 std::ostream& operator<<(std::ostream& stream, const Vector2& v);
-std::istream& operator>>(std::istream& stream, const Vector2& v);
+std::istream& operator>>(std::istream& stream, Vector2& v);
+Vector2 operator*(float k, const Vector2& v);
 
 } /* namespace my_math */
 

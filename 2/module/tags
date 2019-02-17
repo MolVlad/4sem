@@ -7,8 +7,24 @@
 CFLAGS	Makefile	/^CFLAGS = #-Wall -Wextra$/;"	m
 COMP	Makefile	/^COMP = g++$/;"	m
 DEFINES	Makefile	/^DEFINES =$/;"	m
+Len	src/Vector2.cpp	/^float my_math::Vector2::Len() const$/;"	f	class:my_math::Vector2
 OBJS	Makefile	/^OBJS = $(SOURCES:.cpp=.o)$/;"	m
-PROJECT	Makefile	/^PROJECT = exe$/;"	m
+PROJECT	Makefile	/^PROJECT = a.out$/;"	m
 RM	Makefile	/^RM = rm -rf$/;"	m
-SOURCES	Makefile	/^SOURCES = src\/main.cpp src\/module.cpp$/;"	m
+SOURCES	Makefile	/^SOURCES = src\/main.cpp src\/Vector2.cpp$/;"	m
+SquareLen	src/Vector2.cpp	/^float my_math::Vector2::SquareLen() const$/;"	f	class:my_math::Vector2
+Vector2	includes/Vector2.h	/^class Vector2$/;"	c	namespace:my_math
+Vector2	src/Vector2.cpp	/^my_math::Vector2::Vector2(const Vector2 &a)$/;"	f	class:my_math::Vector2
+Vector2	src/Vector2.cpp	/^my_math::Vector2::Vector2(float x1, float y1)$/;"	f	class:my_math::Vector2
+__VECTOR_2__	includes/Vector2.h	2;"	d
 main	src/main.cpp	/^int main()$/;"	f
+my_math	includes/Vector2.h	/^namespace my_math {$/;"	n
+operator +	src/Vector2.cpp	/^my_math::Vector2 my_math::Vector2::operator+(const my_math::Vector2& other) const$/;"	f	class:my_math::Vector2
+operator +=	src/Vector2.cpp	/^void my_math::Vector2::operator+=(const my_math::Vector2& other)$/;"	f	class:my_math::Vector2
+operator -	src/Vector2.cpp	/^my_math::Vector2 my_math::Vector2::operator-(const my_math::Vector2& other) const$/;"	f	class:my_math::Vector2
+operator -=	src/Vector2.cpp	/^void my_math::Vector2::operator-=(const my_math::Vector2& other)$/;"	f	class:my_math::Vector2
+operator <<	src/Vector2.cpp	/^std::ostream& my_math::operator<<(std::ostream& stream, const my_math::Vector2& v)$/;"	f	class:my_math
+operator >>	src/Vector2.cpp	/^std::istream& my_math::operator>>(std::istream& stream, const my_math::Vector2& v)$/;"	f	class:my_math
+x	includes/Vector2.h	/^	float x, y;$/;"	m	class:my_math::Vector2
+y	includes/Vector2.h	/^	float x, y;$/;"	m	class:my_math::Vector2
+~Vector2	src/Vector2.cpp	/^my_math::Vector2::~Vector2()$/;"	f	class:my_math::Vector2

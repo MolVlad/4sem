@@ -20,7 +20,7 @@ link: $(OBJS)
 all: clean link
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(PROJECT)
 
 %.o: %.cpp
 	$(COMP) $(CFLAGS) -c $(@:.o=.cpp) -o $@
