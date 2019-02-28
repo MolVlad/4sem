@@ -1,6 +1,6 @@
 PROJECT = sfml
 
-SOURCES = main.cpp
+SOURCES = sources/main.cpp sources/draw.cpp sources/handlers.cpp
 INCLUDES += -I includes
 LIBS = -lsfml-graphics -lsfml-window -lsfml-system
 DEFINES =
@@ -21,7 +21,7 @@ link: $(OBJS)
 all: clean link
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(PROJECT) $(OBJS)
 
 %.o: %.cpp
 	$(COMP) $(CFLAGS) -c $(@:.o=.cpp) -o $@

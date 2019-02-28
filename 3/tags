@@ -1,0 +1,22 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CFLAGS	Makefile	/^CFLAGS = #-Wall -Wextra$/;"	m
+CHARGE_SIZE	includes/draw.h	4;"	d
+COMP	Makefile	/^COMP = g++$/;"	m
+DEFINES	Makefile	/^DEFINES =$/;"	m
+LIBS	Makefile	/^LIBS = -lsfml-graphics -lsfml-window -lsfml-system$/;"	m
+OBJS	Makefile	/^OBJS = $(SOURCES:.cpp=.o)$/;"	m
+PROJECT	Makefile	/^PROJECT = sfml$/;"	m
+RM	Makefile	/^RM = rm -rf$/;"	m
+SOURCES	Makefile	/^SOURCES = sources\/main.cpp sources\/draw.cpp sources\/handlers.cpp$/;"	m
+__DRAW_H__	includes/draw.h	2;"	d
+__HANDLERS_H__	includes/handlers.h	2;"	d
+drawCharges	sources/draw.cpp	/^void drawCharges(sf::RenderWindow &window, std::vector<sf::Vector2i> &charges)$/;"	f
+drawPowerLines	sources/draw.cpp	/^void drawPowerLines(sf::RenderWindow &window, sf::Vector2i &position, std::vector<sf::Vector2i> &charges)$/;"	f
+handleEvent	sources/handlers.cpp	/^void handleEvent(sf::RenderWindow &window, std::vector<sf::Vector2i> &charges)$/;"	f
+handleMouse	sources/handlers.cpp	/^void handleMouse(sf::RenderWindow &window, sf::Event &event, std::vector<sf::Vector2i> &charges)$/;"	f
+main	sources/main.cpp	/^int main()$/;"	f
