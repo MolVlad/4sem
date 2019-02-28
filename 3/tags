@@ -16,7 +16,9 @@ SOURCES	Makefile	/^SOURCES = sources\/main.cpp sources\/draw.cpp sources\/handle
 __DRAW_H__	includes/draw.h	2;"	d
 __HANDLERS_H__	includes/handlers.h	2;"	d
 drawCharges	sources/draw.cpp	/^void drawCharges(sf::RenderWindow &window, std::vector<sf::Vector2i> &charges)$/;"	f
-drawPowerLines	sources/draw.cpp	/^void drawPowerLines(sf::RenderWindow &window, sf::Vector2i &position, std::vector<sf::Vector2i> &charges)$/;"	f
-handleEvent	sources/handlers.cpp	/^void handleEvent(sf::RenderWindow &window, std::vector<sf::Vector2i> &charges)$/;"	f
-handleMouse	sources/handlers.cpp	/^void handleMouse(sf::RenderWindow &window, sf::Event &event, std::vector<sf::Vector2i> &charges)$/;"	f
+drawFieldStrength	sources/draw.cpp	/^void drawFieldStrength(sf::RenderWindow &window, sf::Vector2i &position, std::vector<sf::Vector2i> &charges)$/;"	f
+drawLine	sources/draw.cpp	/^void drawLine(sf::RenderWindow &window, sf::Vector2i &position, std::vector<sf::Vector2i> &charges)$/;"	f
+drawPowerLines	sources/draw.cpp	/^void drawPowerLines(sf::RenderWindow &window, std::vector<sf::Vector2i> &charges, std::vector<sf::Vector2i> &lines)$/;"	f
+handleEvent	sources/handlers.cpp	/^void handleEvent(sf::RenderWindow &window, std::vector<sf::Vector2i> &charges, std::vector<sf::Vector2i> &lines)$/;"	f
+handleMouse	sources/handlers.cpp	/^void handleMouse(sf::RenderWindow &window, sf::Event &event, std::vector<sf::Vector2i> &charges, std::vector<sf::Vector2i> &lines)$/;"	f
 main	sources/main.cpp	/^int main()$/;"	f
