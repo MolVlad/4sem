@@ -43,13 +43,13 @@ float Vector2::squareLen() const
 	return x * x + y * y;
 }
 
-std::ostream& operator<<(std::ostream& stream, const Vector2& v)
+std::ostream& my_math::operator<<(std::ostream& stream, const Vector2& v)
 {
 	stream << v.x << " " << v.y << '\n';
 	return stream;
 }
 
-std::istream& operator>>(std::istream& stream, Vector2& v)
+std::istream& my_math::operator>>(std::istream& stream, Vector2& v)
 {
 	stream >> v.x >> v.y;
 	return stream;
@@ -87,7 +87,7 @@ Vector2 Vector2::operator*(float k) const
 	return Vector2(x * k, y * k);
 }
 
-Vector2 operator*(float k, const Vector2& v)
+Vector2 my_math::operator*(float k, const Vector2& v)
 {
 	return Vector2(v.x * k, v.y * k);
 }
