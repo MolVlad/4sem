@@ -1,6 +1,6 @@
 PROJECT = sfml
 
-SOURCES = sources/main.cpp sources/draw.cpp sources/handlers.cpp
+SOURCES = sources/main.cpp
 INCLUDES += -I includes
 LIBS = -lsfml-graphics -lsfml-window -lsfml-system
 DEFINES =
