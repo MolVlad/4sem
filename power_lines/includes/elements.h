@@ -32,10 +32,10 @@ class Elements
 	bool reachedEdge(my_math::Vector2 position);
 
 	// configuration constants
-	unsigned int chargeSize = 1;	// size of charge on the screen
-	float chargeValue = 10;
-	float lineStep = 2;	// power line step in pixel
-	float deltaNeighbourhood = 5;
+	const unsigned int chargeSize = 1;	// size of charge on the screen
+	const float chargeValue = 10;
+	const float lineStep = 2;	// power line step in pixel
+	const float deltaNeighbourhood = 5;
 };
 
 } /* namespace PowerLines */
