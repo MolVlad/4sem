@@ -34,8 +34,8 @@ class Elements
 	// configuration constants
 	unsigned int chargeSize = 1;	// size of charge on the screen
 	float chargeValue = 10;
-	unsigned int lineStep = 2;	// power line step in pixel
-	float deltaNeighbourhood = 3;
+	float lineStep = 2;	// power line step in pixel
+	float deltaNeighbourhood = 5;
 };
 
 } /* namespace PowerLines */

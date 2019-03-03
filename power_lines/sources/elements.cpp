@@ -81,7 +81,10 @@ my_math::Vector2 Elements::computeResulting(my_math::Vector2 const position, std
 		resulting.y += fromCharge.y * chargeValue / (distance * distance);
 	}
 
-	return my_math::Vector2(resulting.x, resulting.y);
+	my_math::Vector2 ret = resulting.perpendicular();
+	return ret;
+
+	//return my_math::Vector2(resulting.x, resulting.y);
 }
 
 my_math::Vector2 Elements::drawFieldVector(sf::RenderWindow &window, my_math::Vector2 const position)
