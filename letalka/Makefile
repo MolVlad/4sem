@@ -1,11 +1,11 @@
 PROJECT = sfml
 
-SOURCES = sources/main.cpp sources/vector2.cpp sources/hero.cpp
+SOURCES = sources/main.cpp sources/vector2.cpp sources/hero.cpp sources/bullet.cpp
 INCLUDES += -I includes
 LIBS = -lsfml-graphics -lsfml-window -lsfml-system
 DEFINES =
 CFLAGS = #-Wall -Wextra
-COMP = g++
+COMP = g++ -std=c++11
 
 OBJS = $(SOURCES:.cpp=.o)
 

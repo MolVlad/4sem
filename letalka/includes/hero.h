@@ -2,6 +2,7 @@
 #define __HERO_H__
 
 #include <string>
+#include"bullet.h"
 
 namespace game {
 
@@ -19,23 +20,31 @@ class Hero
 	my_math::Vector2 getSpeed() const;
 	void setSpeed(my_math::Vector2 vector);
 	void updateSpeed();
+	void move(const float timeDif);
+	void setOrigin();
+	void takeAim(sf::RenderWindow &window);
 
 	void setScreenSize(int width, int height);
 	bool isOnScreen() const;
 	void returnToScreen();
 
+	Bullet createBullet(sf::RenderWindow &window);
+	float getRechargeTime();
+
 	private:
 
 	my_math::Vector2 speed;
 
-	const float speedConfig = 1;
-
 	int screenWidth = 800;
 	int screenHeight = 600;
+
+	// configuration constants
+	const float speedConfig = 500;
+	const float rechargeTime = 0.001f;
 };
 
 std::ostream& operator<<(std::ostream& stream, const Hero& hero);
 
-}	/* namespace object */
+}	/* namespace game */
 
 #endif /* __HERO_H__ */

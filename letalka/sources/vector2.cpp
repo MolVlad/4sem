@@ -5,7 +5,7 @@
 my_math::Vector2::Vector2(const Vector2 &a)
 {
 	x = a.x;
-	y = a.x;
+	y = a.y;
 }
 
 my_math::Vector2::Vector2(float x1, float y1)
@@ -63,10 +63,12 @@ void my_math::Vector2::operator-=(const my_math::Vector2& other)
 	y = y - other.y;
 }
 
+/*
 float my_math::Vector2::operator*(const my_math::Vector2& other)
 {
 	return x * other.x + y * other.y;
 }
+*/
 
 float my_math::Vector2::operator^(const my_math::Vector2& other) const
 {

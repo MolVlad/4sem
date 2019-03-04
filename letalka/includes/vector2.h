@@ -27,7 +27,7 @@ class Vector2
 	Vector2 operator-(const Vector2& other) const;
 	void operator-=(const Vector2& other);
 
-	float operator*(const Vector2& other);
+	//float operator*(const Vector2& other);
 	float operator^(const Vector2& other) const;
 
 	Vector2 operator*(float k) const;
