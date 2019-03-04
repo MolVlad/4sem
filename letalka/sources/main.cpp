@@ -2,72 +2,33 @@
 #include <iostream>
 #include <vector>
 #include <math.h>
+#include "vector2.h"
+#include "hero.h"
+
+#define SCREEN_WIDTH 800
+#define SCREEN_HEIGHT 600
 
 #define SPEED 200
 
-void normalizeVector(sf::Vector2f &vector)
-{
-	float length = sqrt(vector.x * vector.x + vector.y * vector.y);
-	vector.x /= length;
-	vector.y /= length;
-}
-
-void scaleVector(sf::Vector2f &vector, int scale)
-{
-	vector.x *= scale;
-	vector.y *= scale;
-}
-
-void getSpeed(sf::Vector2f &speed)
-{
-	speed.x = speed.y = 0;
-
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-		speed.x += -1;
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-		speed.y += -1;
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-		speed.x += 1;
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-		speed.y += 1;
-
-	speed.x *= SPEED;
-	speed.y *= SPEED;
-}
-
-typedef struct
-{
-	sf::Vector2f position;
-	sf::Vector2f speed;
-} Bullet;
-
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(800, 600), "SFML works!");
+	sf::RenderWindow window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Letalka");
 
-	sf::Texture texture;
-	texture.loadFromFile("smile.png");
-
-	sf::Sprite circle(texture);
-	circle.setScale(1.2f, 1.2f);
-
-	sf::CircleShape bul(3);
+	game::Hero hero;
+	hero.setScreenSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+	hero.texture.loadFromFile("smile.png");
+	hero.sprite = sf::Sprite(hero.texture);
+	hero.sprite.setScale(2.0f, 2.0f);
 
 	sf::Clock clock;
-
-	sf::Vector2f speed;
-	sf::Vector2f delta;
-	sf::Vector2f position;
-
-	std::vector<Bullet> bullets;
-
 	sf::Time lastTime = clock.getElapsedTime();
+
+	//sf::CircleShape bul(3);
+	//std::vector<Bullet> bullets;
 
 	while (window.isOpen())
 	{
 		window.clear();
-
-		sf::Time time = clock.getElapsedTime();
 
 		sf::Event event;
 		while (window.pollEvent(event))
@@ -76,23 +37,19 @@ int main()
 				window.close();
 		}
 
-		getSpeed(speed);
-		std::cout << "speed: " << speed.x << ' ' << speed.y << '\n';
+		sf::Time time = clock.getElapsedTime();
+
+		hero.updateSpeed();
+		std::cout << hero;
+		//std::cout << "speed: " << hero.getSpeed() << '\n';
+
+/*
 		delta.x = speed.x * (time.asSeconds() - lastTime.asSeconds());
 		delta.y = speed.y * (time.asSeconds() - lastTime.asSeconds());
 
-		position = circle.getPosition() + delta;
-		if(position.x < 25)
-			position.x = 25;
-		if(position.x > (800 - 25))
-			position.x = 800 - 25;
-		if(position.y < 25)
-			position.y = 25;
-		if(position.y > (600 - 25))
-			position.y = 600 - 25;
+		hero.sprite.setPosition(position);
 
-		circle.setPosition(position);
-
+		//bullets coordinates
 		for(int i = 0; i < bullets.size(); i++)
 		{
 			delta.x = bullets[i].speed.x * (time.asSeconds() - lastTime.asSeconds());
@@ -105,6 +62,7 @@ int main()
 
 		lastTime = time;
 
+		//rotation
 		sf::Vector2u circleSize = circle.getTexture()->getSize();
 		circle.setOrigin(circleSize.x / 2, circleSize.y / 2);
 
@@ -115,6 +73,7 @@ int main()
 		const float pi = 3.1415f;
 		circle.setRotation(90 + atan2f(d.y, d.x) * 180 / pi);
 
+		//bullets create
 		if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
 			Bullet bullet;
@@ -125,8 +84,9 @@ int main()
 
 			bullets.push_back(bullet);
 		}
+*/
 
-		window.draw(circle);
+		window.draw(hero.sprite);
 		window.display();
 	}
 
