@@ -29,8 +29,8 @@ class Bullet
 	my_math::Vector2 speed;
 
 	// configuration constants
-	const float bulletSize = 2;
-	const float speedConfig = 1500;
+	static const float bulletSize;
+	static const float speedConfig;
 };
 
 std::ostream& operator<<(std::ostream& stream, const Bullet& bullet);

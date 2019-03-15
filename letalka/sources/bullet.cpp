@@ -7,9 +7,13 @@
 
 using namespace game;
 
+	const float Bullet::bulletSize = 5;
+	const float Bullet::speedConfig = 10000;
+
 Bullet::Bullet()
 {
 	circle = sf::CircleShape(bulletSize);
+	circle.setFillColor(sf::Color::Red);
 }
 
 Bullet::~Bullet()
@@ -101,9 +105,8 @@ void BulletsSet::moveAndDraw(sf::RenderWindow &window, const float timeDif)
 
 		if(!(set[i].isOnScreen(screenWidth, screenHeight)))
 		{
-			//?????????
-			//there is a problem here
-			//set.erase(set.begin() + i);
+			set[i] = set[set.size() - 1];
+			set.erase(set.begin() + i);
 		}
 		else
 		{

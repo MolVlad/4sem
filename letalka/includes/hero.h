@@ -40,7 +40,7 @@ class Hero
 
 	// configuration constants
 	const float speedConfig = 500;
-	const float rechargeTime = 0.001f;
+	const float rechargeTime = 0.03f;
 };
 
 std::ostream& operator<<(std::ostream& stream, const Hero& hero);
