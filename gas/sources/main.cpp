@@ -41,6 +41,7 @@ int main()
 		currentTime = clock.getElapsedTime();
 		dt = currentTime.asSeconds() - movementTimeStamp.asSeconds();
 
+    ballSet.makeCollisions();
 		ballSet.moveAndDraw(window, dt);
 
 		movementTimeStamp = currentTime;

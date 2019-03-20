@@ -72,7 +72,8 @@ float my_math::Vector2::operator*(const my_math::Vector2& other)
 
 float my_math::Vector2::operator^(const my_math::Vector2& other) const
 {
-	return x * other.y - y * other.x;
+	//return x * other.y - y * other.x;
+	return x * other.x + y * other.y;
 }
 
 my_math::Vector2 my_math::Vector2::operator*(float k) const

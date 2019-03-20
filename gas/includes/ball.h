@@ -9,8 +9,9 @@ class Ball: public MaterialPoint
     Ball(sf::Vector2i mousePosition);
 
     ~Ball();
+    void returnToScreen();
 
-    float radius = 1;
+    float radius = 10;
     int type;
 
     sf::CircleShape circle;
@@ -27,6 +28,7 @@ class BallSet
 
     void push(Ball ball);
     void moveAndDraw(sf::RenderWindow &window, const float dt);
+    void makeCollisions();
 
 	private:
 	  std::vector<Ball> set;

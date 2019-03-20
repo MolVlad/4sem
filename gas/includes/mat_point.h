@@ -20,7 +20,7 @@ class MaterialPoint
   my_math::Vector2 velocity;
   my_math::Vector2 acceleration;
 
-  float mass;
+  float mass = 10;
 };
 
 #endif /* __MAT_POINT_H__ */
