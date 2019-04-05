@@ -24,17 +24,15 @@ void getSamples(std::vector<sf::Int16> & samples, double freq)
 
 void play(double freq)
 {
-  std::vector<sf::Int16> samples;
-  sf::SoundBuffer buf;
-  sf::Sound sound;
+  static std::vector<sf::Int16> samples;
+  static sf::SoundBuffer buf;
+  static sf::Sound sound;
 
     getSamples(samples, freq);
 
     buf.loadFromSamples(&samples[0], samples.size(), 2, DISCR);
     sound.setBuffer(buf);
     sound.play();
-
-    sleep(SECS);
 }
 
 int main()
